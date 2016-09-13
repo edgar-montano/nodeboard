@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+<p>Welcome, {{#if user}} <b>{{user.username}}</b>  {{/if}}</p>
+<h3>{{#if user}}{{else}}<a href="/login">Log in </a> | <a href="/register">Register </a>{{/if}}</h3>
+{{#if is_enrolled}}{{else}}<div class="alert alert-warning">You are not currently enrolled in a class.
+  Please <a href="/classroom/display" >click here  </a>to select a class you wish to enroll in. </div>{{/if}}
+
+{{#if user}}
+{{#if is_enrolled}}
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr><th>Class name </th></tr>
+    </thead>
+{{#each classrooms}}
+<tr>
+<td><a href="/classroom/id?class={{this._id}}">{{this.name}}</a></td>
+</tr>
+{{/each}}
+</div>
+
+{{/if}}
+{{/if}}

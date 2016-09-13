@@ -1,0 +1,21 @@
+<h1>Register</h1>
+
+<script src="/javascripts/register.js"></script>
+
+<div id="err_msg"></div>
+{{#if error}} <div class="alert alert-warning">{{err}}</div>{{/if}}
+
+<div class="col-xs-3">
+<form action="/register" method="POST" id="myForm" class="form-inline">
+
+<label class="form-inline" >Username <input type="text" name="username" placeholder="johndoe" /></label>
+<label>First Name<input type="text" name="first_name" placeholder="John" /></label>
+<label>Last Name<input type="text" name="last_name"  placeholder="Doe"/></label>
+<label>Email<input type="text" name="email" id="email" placeholder="john@doe.com" /></label>
+<label>Password<input type="password" name="password" /></label>
+<p></p>
+<input type="submit" value="submit"  id="btnSubmit" class="btn btnPrimary"/>
+
+</form>
+
+</div>

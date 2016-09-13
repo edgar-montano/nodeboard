@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<p>Welcome to uploading an assignment {{#if user}}, <b>{{user.username}}</b>  {{/if}}</p>
+<h3>{{#if user}}{{else}}<a href="/login">Log in </a> | <a href="/register">Register </a>{{/if}}</h3>
+{{#if error}} <div class="alert alert-danger">{{err.name}} : {{err.message}}</div>{{/if}}
+
+{{#if user}}
+
+
+<form action="/upload/assignment?id={{homework._id}}" method="POST" >
+  <p>
+
+<label name="label">Solution</label>
+    <textarea type="text" id="solution" name="solution" class=" form-control form-control-lg" placeholder="enter your solution"></textarea>
+  <button type="submit" class="btn btnPrimary">Create new assignment</button>
+</form>
+</div>
+{{/if}}

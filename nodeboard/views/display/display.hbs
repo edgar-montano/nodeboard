@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<p>Welcome, {{#if user}} <b>{{user.username}}</b>  {{/if}}</p>
+<h3>{{#if user}}{{else}}<a href="/login">Log in </a> | <a href="/register">Register </a>{{/if}}</h3>
+
+{{#if user}}
+{{#each classrooms}}
+<p> <a href="/classroom/id?class={{this._id}}">{{this.name}}</a>
+   <a href="/classroom/enroll?class={{this._id}}">[Enroll]</a> </p>
+{{/each}}
+
+{{/if}}

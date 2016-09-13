@@ -1,0 +1,15 @@
+
+<script src="/javascripts/display.js"></script>
+
+<h3>{{#if user}}{{else}}<a href="/login">Log in </a> | <a href="/register">Register </a>{{/if}}</h3>
+
+{{#if user}}
+<div class="container">
+<h3> List of classes </h3>
+<ul class="nav nav-tabs">
+{{#each classrooms}}
+<li > <a href="/classroom/id?class={{this._id}}">{{this.name}}</a></li>
+{{/each}}
+</ul>
+</div>
+{{/if}}

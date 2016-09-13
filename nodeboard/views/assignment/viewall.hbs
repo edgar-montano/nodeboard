@@ -1,0 +1,38 @@
+
+{{#if user}}
+
+
+
+
+
+<h1>Assignments for {{classrooms.name}} </h1> </p>
+<p> Instructor: {{classrooms.moderators.first_name}}  {{classrooms.moderators.last_name}}</p>
+
+</p>
+<table class="table-striped">
+  <thead>
+  <tr>
+    <th>Assignment Name </th>
+    <th>Description</th>
+    <th>Date </th>
+  </tr>
+</thead>
+{{#each homework}}
+<tr>
+<td><a href="/upload/assignment?id={{this._id}}">{{this.name}}</a></td>
+<td>{{this.description}}</td>
+<td>{{this.date}}</td>
+</tr>
+{{/each}}
+</table>
+
+{{else}}
+<a href="/">You are not logged in!</a>
+{{/if}}
+
+
+
+{{#if is_admin}}
+<strong><a href="/assignment/create?id={{classId}}">Create a new assignment</a> | <a href="">Add a new resource</a> |</strong>
+<strong><a href="">Modify Enrollment</a> | <a href="">Modify resources</a></strong>
+{{/if}}

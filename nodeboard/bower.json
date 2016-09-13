@@ -1,0 +1,22 @@
+{
+  "name": "node_board",
+  "description": "open source clone of black board",
+  "main": "",
+  "authors": [
+    "Edgar Montano <em2532@nyu.edu>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/nyu-csci-ua-0480-010-spring-2016/em2532-final-project",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery-ui": "^1.11.4"
+  }
+}

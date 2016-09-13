@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{{title}}}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/bootstrap/css/simple-sidebar.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/">
+                        NodeBoard
+                    </a>
+                </li>
+                {{#if user}}
+                <li>
+                    <a href="/classroom/display">Classrooms</a>
+                </li>
+                {{/if}}
+
+                {{#if user}}
+                <li>
+                    <a href="/classroom/display">My Classes</a>
+                </li>
+                {{/if}}
+
+
+                <li>
+                    {{#if user}}<a href="/logout">Logout</a>{{else}}<a href="/login">Log in </a> {{/if}}
+                </li>
+                {{#if user}}
+                {{else}}
+                <li>
+                    <a href="/register">Register</a>
+                </li>
+                {{/if}}
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                      {{{body}}}
+                      <!--  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <!-- <script src="/bootstrap/js/jquery.js"></script>
+
+
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+
+{{#if user}}
+
+<h3>Here are the following assignments you submitted</h3>
+
+
+  <table class="table table-border">
+
+  <thead>
+  <tr>
+    <th>Assignment name</th>
+    <th>Due Date </th>
+    <th>Dated posted</th>
+    <th>Grade</th>
+  </tr>
+</thead>
+    {{#each homeworks}}
+  <tr>
+  <td>{{this.assignment.name}} </td>
+   <td>{{this.assignment.due}}</td>
+   <td>{{this.posted}}</td>
+   <td>{{this.grade}}</td>
+ </tr>
+{{/each}}
+ </table>
+
+
+</p>
+{{#if allow_enroll}}
+<div class="alert alert-warning"><a href="/classroom/enroll?class={{classId}}" id ="enrollBtn" enrollId="{{classId}}" class="">You are currently not enrolled in this class
+you can request enrollment by clicking here</a></div>
+</p>{{/if}}
+{{else}}
+<a href="/">You are not logged in!</a>
+{{/if}}

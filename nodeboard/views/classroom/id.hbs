@@ -1,0 +1,65 @@
+
+<script>
+$document.ready(function(){
+  $("#container").hide();
+  $('button').click(function(){
+    $("#container").toggle();
+  });
+});
+</script>
+
+<h1> Welcome to {{title}}</h1>
+{{#if user}}
+
+{{#if allow_enroll}}
+<div class="alert alert-warning"><a href="/classroom/enroll?class={{classId}}" id ="enrollBtn" enrollId="{{classId}}" class="">You are currently not enrolled in this class
+you can request enrollment by clicking here</a></div>
+</p>{{/if}}
+{{else}}
+<a href="/">You are not logged in!</a>
+{{/if}}
+
+
+
+{{#each classrooms}}
+
+<p> Instructor: {{this.moderators.first_name}}  {{this.moderators.last_name}}</p>
+
+
+
+
+<div><strong>{{this.description}}</strong></div>
+
+<button class="btn btnPrimary" id="btn">Display students enrolled</button>
+<div class="container" id="container">
+  <table class="table table-border">
+
+  <thead>
+  <tr>
+    <th>Firstname </th>
+    <th>Lastname </th>
+    <th>Email </th>
+  </tr>
+</thead>
+    <tr>
+  {{#each this.students}}
+  <tr>
+  <td>{{this.first_name}}</td>
+
+   <td>{{this.last_name}}</td>
+   <td>{{this.email}}</td>
+ </tr>
+   {{/each}}
+ </table>
+
+{{/each}}
+</div>
+</p>
+
+
+
+
+{{#if is_admin}}
+<strong><a href="/assignment/create?id={{classId}}">Create a new assignment</a> | <a href="/resources/create?id={{classId}}">Add a new resource</a> |</strong>
+<strong></strong>
+{{/if}}

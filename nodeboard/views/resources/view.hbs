@@ -1,0 +1,38 @@
+
+
+<h1>Resources for {{classrooms.name}} </h1> </p>
+<p> Instructor: {{classrooms.moderators.first_name}}  {{classrooms.moderators.last_name}}</p>
+
+{{#if single_view}}
+
+
+ <h3> {{../resources.name}}</h3>
+ <p>Description: {{../resources.description}}</p>
+<p><a href="{{../resources.link}}">{{../resources.link}}</a></p>
+
+ {{else}}
+
+ <table class="table table-border">
+ <thead>
+ <tr>
+   <th>Resource name </th>
+   <th>Link </th>
+ </tr>
+</thead>
+   <tr>
+ {{#each resources}}
+
+ <tr>
+ <td><a href="/resources/view?classId={{../classId}}&id={{this._id}}" > {{this.name}} </a></td>
+
+  <td><a href="{{this.link}}">{{this.link}}</a></td>
+</tr>
+  {{/each}}
+</table>
+
+
+
+ {{/if}}
+
+
+</p>
