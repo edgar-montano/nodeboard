@@ -1,6 +1,8 @@
 
 # Open source blackboard (nodeboard)
 
+**NOTE THIS PROJECT IS NOW DEFUNCT, A NEWER UPDATED VERSION WILL BE MADE READILY AVAILABLE UTILIZING REACT.JS**
+
 ## Overview
 
 This project will replicate (possibly improve) the blackboard application used by colleges (for NYU this is NYUClasses) and the idea is to provide an open source solution for schools that cannot afford the cost of blackboard but still desire the functionality provided by blackboard.
